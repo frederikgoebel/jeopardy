@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux'
-import questions from './questions'
+import loading from './loading'
 import players from './players'
-import categories from './categories'
 import overlays from './overlays'
+import questions from './questions'
+import categories from './categories'
 
 export default combineReducers({
-  questions,
+  loading,
   players,
+  questions,
   categories,
-  overlays
+  overlays,
 })

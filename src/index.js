@@ -7,6 +7,10 @@ import Game from './components/Game'
 import './index.css';
 
 const initstate = {
+  loading: {
+    isLoading: false,
+    error: null
+  },
   questions: {
     active: null,
     byId: {
@@ -26,22 +30,21 @@ const initstate = {
         text: "What x?"
       },
       "question4": {
-        "value": 400,
+        "value": 75,
         isAnswered: false,
         text: "What x?"
       }
     },
-
     allIds: ["question1", "question2", "question3", "question4"]
   },
   categories: {
     byId: {
       "catergory1": {
-        name: "Test Cat",
+        name: "Methods",
         questions: ["question1", "question2"]
       },
       "catergory2": {
-        name: "Test Cat",
+        name: "Classes",
         questions: ["question3", "question4"]
       }
     },
@@ -51,11 +54,11 @@ const initstate = {
     byId: {
       "player1": {
         name: "Fred",
-        score: 200
+        score: 0
       },
       "player2": {
         name: "Erik",
-        score: 400
+        score: 0
       }
     },
     allIds: ["player1", "player2"]

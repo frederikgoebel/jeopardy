@@ -7,6 +7,7 @@ const PointsOverlay = ({players, isActive, points, onNameClick}) => {
   if (isActive) {
     return (
       <div className="overlay">
+      <h2>Who got it right?</h2>
         {players.allIds.map((id) => <a onClick={(e) => onNameClick(id, points)} key={id}>{players.byId[id].name}</a>)}
       </div>
     )

@@ -21,8 +21,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   onClick: (id) => function() {
-    dispatch(hideQuestion())
     dispatch(showAssignPoints());
+    dispatch(hideQuestion())
   }()
 })
 

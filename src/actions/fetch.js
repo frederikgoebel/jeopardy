@@ -58,10 +58,9 @@ function normalize(json) {
       }
     }
 
-    questionsAllIds.concat(categoryQuestions)
+    questionsAllIds = questionsAllIds.concat(categoryQuestions)
     return "category" + i
   })
-
   return {
     questions: {
       byId: questionsById,

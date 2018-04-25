@@ -20,19 +20,22 @@ const questions = (state = [], action) => {
   }
 }
 
-const active = (state = [], action) => {
+const active = (state = null, action) => {
   switch (action.type) {
     case CARD_ACTIVATED:
       return action.id
-    case FETCH_BOARD_SUCCESS:
-      return action.questions.allIds
     default:
       return state;
   }
 }
 
 const allIds = (state = [], action) => {
-  return state;
+  switch (action.type) {
+    case FETCH_BOARD_SUCCESS:
+      return action.questions.allIds
+    default:
+      return state;
+  }
 }
 
 export default combineReducers({

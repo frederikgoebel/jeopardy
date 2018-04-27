@@ -1,44 +1,33 @@
 import React from "react";
 import { connect } from "react-redux";
-import { cardActivated, showQuestion } from "../actions/index";
+import { cardActivated } from "../actions/index";
 import Column from './Column'
 import { fetchBoard } from '../actions/fetch'
+import { switchGameState, GAME_STATE_QUESTION } from '../actions/gameState'
 
-class Board extends React.Component {
-  componentDidMount() {
-    this.props.onLoad()
+const Board = ({categories, questions, onCardClick, isGameOver}) => {
+
+  if (isGameOver) {
+    return (<div>Game Over!</div>);
   }
-  render() {
-    const {error, loading, categories, questions, onCardClick} = this.props;
-
-    if (error) {
-      return <div>Error! {error.message}</div>;
-    }
-
-    if (loading) {
-      return (<div>Loading...</div>);
-    }
-
-    return (
-      <div id="board">
+  return (
+    <div id="board">
         {categories.allIds.map((id) => <Column key={id} name={categories.byId[id].name} questions={questions} questionIds={categories.byId[id].questions} onCardClick={onCardClick} />)}
       </div>
-      );
-  }
+    );
 }
 
-const mapStateToProps = state => ({
-  categories: state.categories,
-  questions: state.questions,
-  loading: state.loading.isLoading,
-  error: state.loading.error
-
-})
+const mapStateToProps = state => {
+  return ({
+    categories: state.categories,
+    questions: state.questions
+  })
+}
 
 const mapDispatchToProps = dispatch => ({
   onCardClick: (id) => function() {
     dispatch(cardActivated(id))
-    dispatch(showQuestion(id))
+    dispatch(switchGameState(GAME_STATE_QUESTION))
   }(),
   onLoad: () => {
     fetchBoard(dispatch)

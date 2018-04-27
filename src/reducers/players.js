@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 import { ADD_SCORE } from '../actions'
+import { ADD_PLAYER, REMOVE_PLAYER } from '../actions/players'
 
-
+var lastId = 0;
 const players = (state = [], action) => {
   switch (action.type) {
     case ADD_SCORE:
-      console.log(action.points)
       return {
         ...state,
         [action.player]: {
@@ -13,6 +13,21 @@ const players = (state = [], action) => {
           score: state[action.player].score + action.points
         }
       };
+    case ADD_PLAYER:
+      lastId++;
+      return {
+        ...state,
+        ["player" + lastId]: {
+          name: action.name,
+          score: 0
+        }
+      }
+    case REMOVE_PLAYER:
+      let newState = {
+        ...state
+      }
+      delete newState[action.id]
+      return newState
     default:
       return state;
   }
@@ -21,7 +36,17 @@ const players = (state = [], action) => {
 }
 
 const allIds = (state = [], action) => {
-  return state;
+  switch (action.type) {
+    case ADD_PLAYER:
+      return [
+        ...state,
+        "player" + lastId
+      ]
+    case REMOVE_PLAYER:
+      return state.filter((id) => id !== action.id)
+    default:
+      return state
+  }
 }
 
 export default combineReducers({

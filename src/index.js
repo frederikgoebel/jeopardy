@@ -4,9 +4,14 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import rootReducer from './reducers'
 import Game from './components/Game'
+import { GAME_STATE_PLAYER_SELECTION } from './actions/gameState'
 import './index.css';
 
+
+
+
 const initstate = {
+  gameState: GAME_STATE_PLAYER_SELECTION,
   loading: {
     isLoading: false,
     error: null
@@ -51,27 +56,11 @@ const initstate = {
     allIds: ["catergory1", "catergory2"]
   },
   players: {
-    byId: {
-      "player1": {
-        name: "Fred",
-        score: 0
-      },
-      "player2": {
-        name: "Erik",
-        score: 0
-      }
-    },
-    allIds: ["player1", "player2"]
-  },
-  overlays: {
-    question: {
-      isActive: false
-    },
-    points: {
-      isActive: false
-    }
+    byId: {},
+    allIds: []
   }
 }
+
 
 const store = createStore(
   rootReducer,

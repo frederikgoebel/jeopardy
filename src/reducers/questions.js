@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
-import { CARD_ACTIVATED } from '../actions'
+import { CARD_ACTIVATED, CARD_SOLVED } from '../actions'
 import { FETCH_BOARD_SUCCESS } from '../actions/fetch'
 
 
-const questions = (state = [], action) => {
+const byId = (state = [], action) => {
   switch (action.type) {
-    case CARD_ACTIVATED:
+    case CARD_SOLVED:
       return {
         ...state,
         [action.id]: {
@@ -40,6 +40,6 @@ const allIds = (state = [], action) => {
 
 export default combineReducers({
   active: active,
-  byId: questions,
+  byId: byId,
   allIds: allIds
 });

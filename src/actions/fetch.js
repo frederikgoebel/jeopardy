@@ -1,3 +1,5 @@
+import { switchGameState, GAME_STATE_BOARD } from './gameState'
+
 export const FETCH_BOARD_BEGIN = 'FETCH_BOARD_BEGIN';
 export const FETCH_BOARD_SUCCESS = 'FETCH_BOARD_SUCCESS';
 export const FETCH_BOARD_FAILURE = 'FETCH_BOARD_FAILURE';
@@ -19,12 +21,13 @@ export const fetchBoardFailure = (error) => ({
 
 export function fetchBoard(dispatch) {
   dispatch(fetchBoardBegin());
-  return fetch("/games/java/content.json")
+  return fetch("/games/java/short.json")
     .then(handleErrors)
     .then(res => res.json())
     .then(json => {
       const board = normalize(json);
       dispatch(fetchBoardSuccess(board.questions, board.categories));
+      dispatch(switchGameState(GAME_STATE_BOARD))
       return;
     })
     .catch(error => dispatch(fetchBoardFailure(error)));

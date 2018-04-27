@@ -1,19 +1,19 @@
 import { connect } from "react-redux";
-import { showAssignPoints, hideQuestion } from "../actions";
 import Overlay from './Overlay'
+import { switchGameState, GAME_STATE_QUESTION, GAME_STATE_ASSIGN_POINTS } from '../actions/gameState'
 
 
 const mapStateToProps = state => {
-  const overlay = state.overlays.question;
-  if (overlay.questionId != null) {
+  const active = state.gameState === GAME_STATE_QUESTION;
+  if (state.questions.active != null) {
     return {
       content: state.questions.byId[state.questions.active].text,
-      isActive: overlay.isActive
+      isActive: active
     }
   } else {
     return {
       content: null,
-      isActive: overlay.isActive
+      isActive: active
     }
   }
 }
@@ -21,8 +21,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   onClick: (id) => function() {
-    dispatch(showAssignPoints());
-    dispatch(hideQuestion())
+    dispatch(switchGameState(GAME_STATE_ASSIGN_POINTS))
   }()
 })
 

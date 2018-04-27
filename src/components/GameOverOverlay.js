@@ -1,22 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
+import Overlay from './Overlay'
 
 const GameOverOverlay = ({isGameOver, winner, onClick}) => {
-  if (!isGameOver)
-    return null
-
   if (winner.length === 1) {
     return (
-      <div className="overlay">
+      <Overlay>
         <h2 >{winner[0].name} wins!</h2>
         <h3 >Score: {winner[0].score}</h3>
         <a key={"button"}onClick={(e) => onClick()}>New Game</a>
-      </div>
+      </Overlay>
     )
   }
 
   return (
-    <div className="overlay">
+    <Overlay>
     <h3>Tie:</h3>
     {winner.map((win) => (
       <div key={win.id}>
@@ -24,35 +22,24 @@ const GameOverOverlay = ({isGameOver, winner, onClick}) => {
       <h5>Score: {win.score}</h5>
       </div>)
     )}
-  </div>
+  </Overlay>
   )
 }
-
-
 
 const mapStateToProps = state => {
   const {players, questions} = state
 
-  var notAnswerd = 0
-  questions.allIds.forEach((id) => {
-    if (!questions.byId[id].isAnswered) {
-      notAnswerd++
-    }
-  })
   var winner = []
   players.allIds.forEach((id) => {
-    if (winner.length === 0 || players.byId[id].score >= winner[0].score) {
+    if (winner.length === 0 || players.byId[id].score >= winner[0].score)
       winner.push({
         ...players.byId[id],
         id: id
-      }
-      )
-
-    }
+      })
   })
+
   return {
-    winner: winner,
-    isGameOver: notAnswerd === 0
+    winner: winner
   }
 }
 

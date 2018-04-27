@@ -26,6 +26,7 @@ class PlayerSelection extends React.Component {
       <form className="playerSelection" onSubmit={(e) => {
         this.onSubmit(e)
       }}>
+        <h1> Jeopardy </h1>
         <h1> Player Selection </h1>
         {playerList}
         <input type="text" value={this.state.nameInputValue} onChange={(e) => this.updateInputValue(e)}/>

@@ -1,0 +1,71 @@
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+#playerSelection {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#playerList {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-content: center;
+  max-width: 960px;
+  flex-grow: 1;
+}
+
+#nameInput {
+  flex-grow: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.playerEntry {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px white solid;
+  margin-left: 60px;
+  margin-right: 60px;
+
+}
+
+.playerEntry span {
+    font-size: 1.4em;
+}
+
+button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.0em;
+}
+
+button:hover {
+  color: #D0021B;
+}
+
+input {
+  height: 20px;
+  width: 200px;
+  font-size: 1.2em;
+}
+
+
+
+.footer{
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  padding-bottom: 20px;
+}

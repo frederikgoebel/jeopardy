@@ -21,7 +21,7 @@ export const fetchBoardFailure = (error) => ({
 
 export function fetchBoard(dispatch) {
   dispatch(fetchBoardBegin());
-  return fetch("/games/java/short.json")
+  return fetch("/games/java/content.json")
     .then(handleErrors)
     .then(res => res.json())
     .then(json => {

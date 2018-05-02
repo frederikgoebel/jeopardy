@@ -1,16 +1,30 @@
 html, body {
-  font-family: sans-serif;
+  font-family: CamingoCode, monospace;
+  font-weight: 100;
   padding: 0;
   margin: 0;
   height: 100%;
   width: 100%;
-  color: rgba(2016,162,14,1);
-  background-color: black;
+  color: white;
+  background-color: #191919;
+  user-select: none;
+  font-size: 100%;
+}
 
-  -webkit-user-select: none;  /* Chrome all / Safari all */
--moz-user-select: none;     /* Firefox all */
--ms-user-select: none;      /* IE 10+ */
-user-select: none;          /* Likely future */
+h1 {
+  font-weight: 100;
+  font-size: 4.0em;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-weight: 100;
+  font-size: 2.5em;
+}
+
+h3{
+  font-weight: 100;
+  font-size: 2.0em;
 }
 
 #modal-root {
@@ -39,7 +53,7 @@ user-select: none;          /* Likely future */
 }
 
 .score {
-  font-size: 2em;
+  font-size: 1em;
   font-weight: 100;
 }
 
@@ -66,17 +80,18 @@ user-select: none;          /* Likely future */
 
 .card {
     flex: 1 1;
-  background-color: rgba(63,72,204,1);
+  background-color: #191919;
   border: none;
   cursor: pointer;
-  font-size: 2em;
-  border: black 5px solid;
+  font-size: 1em;
+  border: red 5px solid;
   color: rgba(2016,162,14,1);
 
 }
 
-.card:focus {
-  outline:0;
+button:focus {
+  outline: red;
+    background-color: red;
 }
 
 .card:hover {
@@ -95,15 +110,38 @@ user-select: none;          /* Likely future */
   width: 100%;
   top: 0;
   left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4em;
-  background-color: black;
-  flex-direction: column;
+  font-size: 1em;
+  background-color: #191919;
+  overflow: scroll;
+}
+
+:disabled {
+  color: gray;
+  text-decoration: line-through;
+}
+
+:disabled:hover {
+    color: gray;
 }
 
 a:hover{
   cursor: pointer;
       color: rgba(2016,162,14,0.5);
+}
+
+.flex{
+  display: flex;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.height-100 {
+  height: 100%;
 }

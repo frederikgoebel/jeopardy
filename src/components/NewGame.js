@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from "react-redux";
 import { addPlayer, removePlayer } from '../actions/players'
 import { switchGameState, GAME_STATE_LOADING } from '../actions/gameState'
+import Overlay from './Overlay'
+import "./NewGame.css"
 
 class PlayerSelection extends React.Component {
   constructor(props) {
@@ -14,35 +16,46 @@ class PlayerSelection extends React.Component {
     const {players, removePlayer, start} = this.props;
     const playerList = players.allIds.map((id) => {
       return (
-        <div key={id}>
-        {players.byId[id].name} <button onClick={(e) => removePlayer(id)} type="button">X</button>
+        <div className="playerEntry" key={id}>
+        <span>{players.byId[id].name}</span> <button onClick={(e) => removePlayer(id)} type="button">remove</button>
       </div>
       )
     })
 
 
     return (
-      <div className="overlay">
-      <form className="playerSelection" onSubmit={(e) => {
-        this.onSubmit(e)
-      }}>
-        <h1> Jeopardy </h1>
-        <h1> Player Selection </h1>
-        {playerList}
-        <input type="text" value={this.state.nameInputValue} onChange={(e) => this.updateInputValue(e)}/>
-        <button disabled={this.state.nameInputValue === ''} type="button" onClick={(e) => {
+      <Overlay>
+      <div id="playerSelection">
+      <div className="header">
+        <h1>Jeopardy</h1>
+        <h2>Player Selection</h2>
+      </div>
+        <div id="nameInput">
+          <input type="text" value={this.state.nameInputValue} onChange={(e) => this.updateInputValue(e)}/>
+          <button disabled={this.state.nameInputValue === ''} type="button" onClick={(e) => {
         this.onSubmit(e)
       }}>Add player</button>
-      </form>
-      <button disabled={players.allIds.length < 2} onClick={(e) => {
+        </div>
+
+        <div id="playerList">
+        {playerList}
+        </div>
+
+      <div className="footer">
+
+      <button type="button" disabled={players.allIds.length < 2} onClick={(e) => {
         start()
       }}>Start</button>
       </div>
+</div>
+      </Overlay>
     )
   }
 
   onSubmit(e) {
     e.preventDefault();
+    if (this.state.nameInputValue === '')
+      return
     this.resetInputValue();
     this.props.addPlayer(this.state.nameInputValue)
   }

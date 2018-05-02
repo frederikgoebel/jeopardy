@@ -4,13 +4,13 @@ const Card = ({id, wasAnswered, value, onClick}) => {
   if (wasAnswered) {
     return (
       <button className={"card wasAnswered"}>
-      {value}
+      <h3>{value}</h3>
     </button>
     )
   } else {
     return (
-      <button onClick={(e) => onClick(id)} className={"card"}>
-      {value}
+      <button onClick={(e) => onClick(id)} className={"card " + "v-" + value}>
+      <h3>{value}</h3>
     </button>
     )
   }

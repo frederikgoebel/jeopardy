@@ -1,30 +1,26 @@
 html, body {
-  font-family: CamingoCode, monospace;
+  font-family: Futura, sans-serif;
   font-weight: 100;
   padding: 0;
   margin: 0;
   height: 100%;
   width: 100%;
-  color: white;
-  background-color: #191919;
+  color: #191919;
+  background-color: #E7E3D8;
   user-select: none;
-  font-size: 100%;
+  font-size: 110%;
 }
 
 h1 {
-  font-weight: 100;
+  font-weight: bold;
   font-size: 4.0em;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 h2 {
+  margin-top: 10px;
   font-weight: 100;
   font-size: 2.5em;
-}
-
-h3{
-  font-weight: 100;
-  font-size: 2.0em;
 }
 
 #modal-root {
@@ -50,6 +46,15 @@ h3{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #191919;
+  color: #E7E3D8;
+
+}
+
+#gameInfo button {
+  color: #E7E3D8;
+  font-size: 0.8em;
+    padding-right: 30px;
 }
 
 .score {
@@ -63,13 +68,12 @@ h3{
 }
 
 #board{
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   flex: 1;
   width: 100%;
   display: flex;
 }
-
-
 
 .column {
   flex: 1 1;
@@ -79,29 +83,38 @@ h3{
 }
 
 .card {
-    flex: 1 1;
-  background-color: #191919;
+  flex: 1 1;
   border: none;
   cursor: pointer;
-  font-size: 1em;
-  border: red 5px solid;
-  color: rgba(2016,162,14,1);
-
+  border: #191919 5px solid;
+  margin: 5px;
 }
 
-button:focus {
-  outline: red;
-    background-color: red;
+h3{
+  font-weight: bold;
+  font-size: 1.4em;
 }
+
+
 
 .card:hover {
   background-color: rgba(63,72,204,0.3);
 }
 
-.card.wasAnswered {
-    background-color: rgba(63,72,204,0.3);
-    cursor: auto;
-    color: rgba(2016,162,14,0.5);
+
+.card.wasAnswered h3{
+  position: relative;
+  display: inline-block;
+}
+
+.card.wasAnswered h3::after {
+  border-bottom: 0.250em solid #191919;
+  content: "";
+  left: 0;
+  margin-top: calc(0.250em / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
 }
 
 .overlay {
@@ -111,17 +124,8 @@ button:focus {
   top: 0;
   left: 0;
   font-size: 1em;
-  background-color: #191919;
+  background-color: #E7E3D8;
   overflow: scroll;
-}
-
-:disabled {
-  color: gray;
-  text-decoration: line-through;
-}
-
-:disabled:hover {
-    color: gray;
 }
 
 a:hover{
@@ -144,4 +148,54 @@ a:hover{
 
 .height-100 {
   height: 100%;
+}
+
+.highlight {
+  color: #FC493A;
+}
+
+button{
+  color: #50A444;
+}
+
+button:disabled{
+  color: gray;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  color: #191919;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button:focus {
+  outline: none
+}
+
+.v-200{
+  color: #F8C002;
+}
+
+.v-400{
+  color: #50A444;
+}
+
+.v-600{
+  color: #00529B;
+}
+
+.v-800{
+  color: #FC493A;
+}
+
+.v-1000{
+  color: #191919;
+}
+
+.question{
+  font-size: 3em;
 }

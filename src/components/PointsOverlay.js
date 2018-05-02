@@ -7,7 +7,7 @@ import Overlay from './Overlay'
 
 const PointsOverlay = ({players, points, activeQuestion, onNameClick}) => {
   return (
-    <Overlay>
+    <Overlay className="flex flex-center flex-column">
       <h2>Who got it right?</h2>
       {players.allIds.map((id) => <a onClick={(e) => onNameClick(id, points, activeQuestion)} key={id}>{players.byId[id].name}</a>)}
     </Overlay>

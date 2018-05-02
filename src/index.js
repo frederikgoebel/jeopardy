@@ -61,7 +61,6 @@ const initstate = {
   }
 }
 
-
 const store = createStore(
   rootReducer,
   initstate,

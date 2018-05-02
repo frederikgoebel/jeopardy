@@ -5,10 +5,9 @@ import Overlay from './Overlay'
 const GameOverOverlay = ({isGameOver, winner, onClick}) => {
   if (winner.length === 1) {
     return (
-      <Overlay>
+      <Overlay className="flex flex-center flex-column">
         <h2 >{winner[0].name} wins!</h2>
         <h3 >Score: {winner[0].score}</h3>
-        <a key={"button"}onClick={(e) => onClick()}>New Game</a>
       </Overlay>
     )
   }
@@ -31,11 +30,16 @@ const mapStateToProps = state => {
 
   var winner = []
   players.allIds.forEach((id) => {
-    if (winner.length === 0 || players.byId[id].score >= winner[0].score)
+    if (winner.length === 0 || players.byId[id].score === winner[0].score)
       winner.push({
         ...players.byId[id],
         id: id
       })
+    else if (players.byId[id].score > winner[0].score)
+      winner = [{
+        ...players.byId[id],
+        id: id
+      }]
   })
 
   return {

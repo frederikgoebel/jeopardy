@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import Overlay from './Overlay'
 import { switchGameState, GAME_STATE_QUESTION, GAME_STATE_ASSIGN_POINTS } from '../actions/gameState'
 
-const QuestionOverlay = ({content, isActive, onClick}) => {
+const QuestionOverlay = ({content, onClick}) => {
   return (
-    <Overlay isActive={isActive}>
-      <div onClick={onClick} dangerouslySetInnerHTML = {
+    <Overlay className="flex flex-center flex-column">
+      <div class="question" onClick={onClick} dangerouslySetInnerHTML = {
     {
       __html: content
     }

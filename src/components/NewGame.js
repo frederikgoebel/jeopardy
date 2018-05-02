@@ -16,38 +16,35 @@ class PlayerSelection extends React.Component {
     const {players, removePlayer, start} = this.props;
     const playerList = players.allIds.map((id) => {
       return (
-        <div className="playerEntry" key={id}>
-        <span>{players.byId[id].name}</span> <button onClick={(e) => removePlayer(id)} type="button">remove</button>
-      </div>
+      [<button key={id} button onClick={(e) => removePlayer(id)} type="button">{players.byId[id].name}</button>, <span className="highlight">/</span>]
       )
     })
 
 
     return (
       <Overlay>
-      <div id="playerSelection">
+      <div id="playerSelection" >
       <div className="header">
-        <h1>Jeopardy</h1>
-        <h2>Player Selection</h2>
+        <h1>JEOPARDY</h1>
+        <h2>PLAYERS<span className="highlight">*</span></h2>
+        <hr />
       </div>
-        <div id="nameInput">
-          <input type="text" value={this.state.nameInputValue} onChange={(e) => this.updateInputValue(e)}/>
-          <button disabled={this.state.nameInputValue === ''} type="button" onClick={(e) => {
-        this.onSubmit(e)
-      }}>Add player</button>
-        </div>
-
+<form onSubmit={(e) => this.onSubmit(e)} id="nameInput">
         <div id="playerList">
         {playerList}
         </div>
 
-      <div className="footer">
+          <input type="text" value={this.state.nameInputValue} onChange={(e) => this.updateInputValue(e)}/>
+
+        </form>
+</div>
+      <div id="footer">
 
       <button type="button" disabled={players.allIds.length < 2} onClick={(e) => {
         start()
       }}>Start</button>
       </div>
-</div>
+
       </Overlay>
     )
   }

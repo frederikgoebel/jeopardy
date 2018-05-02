@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Overlay = ({children}) => {
+const Overlay = ({children, className}) => {
   return (
-    <div className="overlay">
+    <div className={"overlay " + className}>
       {children}
     </div>
   )

@@ -5,11 +5,13 @@ import { switchGameState, GAME_STATE_ASSIGN_POINTS, GAME_STATE_BOARD } from '../
 import Overlay from './Overlay'
 
 
-const PointsOverlay = ({players, points, activeQuestion, onNameClick}) => {
+const PointsOverlay = ({players, points, activeQuestion, onNameClick, onDismissClick}) => {
   return (
     <Overlay className="flex flex-center flex-column">
       <h2>Who got it right?</h2>
       {players.allIds.map((id) => <a onClick={(e) => onNameClick(id, points, activeQuestion)} key={id}>{players.byId[id].name}</a>)}
+      <hr />
+      <a onClick={(e) => onDismissClick(activeQuestion)} key={"dismiss"}>Nobody</a>
     </Overlay>
   )
 }
@@ -28,6 +30,10 @@ const mapDispatchToProps = dispatch => {
     onNameClick: (player, points, questionId) => {
       dispatch(switchGameState(GAME_STATE_BOARD))
       dispatch(addScore(player, points))
+      dispatch(cardSolved(questionId))
+    },
+    onDismissClick: (questionId) => {
+      dispatch(switchGameState(GAME_STATE_BOARD))
       dispatch(cardSolved(questionId))
     }
   }

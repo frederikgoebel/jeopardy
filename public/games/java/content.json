@@ -21,10 +21,10 @@
       ]
     },
     {
-      "name": "OOP",
+      "name": "Some classes",
       "questions": [
-        "<pre><code class=\"language-java\">public static void main(){</ br>}</code></pre>",
-        "<pre><code class=\"language-java\">public static void main(){</ br>}</code></pre>",
+        "<pre><code class=\"language-java\">myList.add(\"a\");</code></pre>",
+        "<pre><code class=\"language-java\">myList.get(0);</code></pre>",
         "<pre><code class=\"language-java\">public static void main(){</ br>}</code></pre>",
         "<img src=\"games/java/appstoreFinal.png\" />",
         "<img src=\"games/java/appstoreFinal.png\" />"

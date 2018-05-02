@@ -95,12 +95,17 @@ h3{
   font-size: 1.4em;
 }
 
-
-
-.card:hover {
-  background-color: rgba(63,72,204,0.3);
+.card:hover:not(.wasAnswered) {
+  background-color: #191919;
 }
 
+.card.v-1000:hover{
+  color: #E7E3D8;
+}
+
+.card.wasAnswered {
+    cursor: default;
+}
 
 .card.wasAnswered h3{
   position: relative;
@@ -130,7 +135,7 @@ h3{
 
 a:hover{
   cursor: pointer;
-      color: rgba(2016,162,14,0.5);
+      color: #FC493A;
 }
 
 .flex{

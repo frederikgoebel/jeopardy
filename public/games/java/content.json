@@ -6,59 +6,49 @@
         "<pre><code class=\"language-java\">\"Hello World!\"</code></pre>",
         "<pre><code class=\"language-java\">42</code></pre>",
         "<pre><code class=\"language-java\">17.73</code></pre>",
-        "<pre><code class=\"language-java\">17.73f</code></pre>",
-        "<pre><code class=\"language-java\">StringBuilder sb = null;</code></pre>"
+        "<pre><code class=\"language-java\">17.73f</code></pre>"
+      ]
+    },
+    {
+      "name": "OOP",
+      "questions": [
+        "<pre><code class=\"language-java\">int getWidth();</code></pre>",
+        "<pre><code class=\"language-java\">void setWidth(int value);</code></pre>",
+        "<pre><code class=\"language-java\">void MyClass(int height, string name);</code></pre>",
+        "<pre><code class=\"language-java\">MyClass myClass = new MyClass(100, \"Hans\");</code></pre>"
+      ]
+    },
+    {
+      "name": "ArrayList",
+      "questions": [
+        "<pre><code class=\"language-java\">myList.add(\"a\");</code></pre>",
+        "<pre><code class=\"language-java\">myList.get(0);</code></pre>"
       ]
     },
     {
       "name": "Blocks",
       "questions": [
-        "public static void main(String[] args) {}",
         "<pre><code class=\"language-java\">public static void main(){</ br>}</code></pre>",
-        "<pre><code class=\"language-java\">public static void main(){</ br>}</code></pre>",
-        "<img src=\"games/java/appstoreFinal.png\" />",
-        "<img src=\"games/java/appstoreFinal.png\" />"
+          "<pre><code class=\"language-java\">if(x == 10){}</code></pre>",
+          "<pre><code class=\"language-java\">for(){}<br/>while(){}</code></pre>",
+          "<pre><code class=\"language-java\">if(x == 10){}</code></pre>"
       ]
     },
     {
-      "name": "Some classes",
+      "name": "Meta",
       "questions": [
-        "<pre><code class=\"language-java\">myList.add(\"a\");</code></pre>",
-        "<pre><code class=\"language-java\">myList.get(0);</code></pre>",
-        "<pre><code class=\"language-java\">public static void main(){</ br>}</code></pre>",
-        "<img src=\"games/java/appstoreFinal.png\" />",
-        "<img src=\"games/java/appstoreFinal.png\" />"
-      ]
-    },
-    {
-      "name": "Misc",
-      "questions": [
-        "<pre><code class=\"language-java\">public static void main(){</ br>}</code></pre>",
-        "<pre><code class=\"language-java\">public static void main(){</ br>}</code></pre>",
-        "<pre><code class=\"language-java\">public static void main(){</ br>}</code></pre>",
-        "<img src=\"games/java/appstoreFinal.png\" />",
-        "<pre><code class=\"language-java\">public static void main(){</ br>}</code></pre>"
-      ]
-    },
-    {
-      "name": "Memes",
-      "questions": [
-        "<pre><code class=\"language-java\">public static void main(){</ br>}</code></pre>",
-        "<pre><code class=\"language-java\">public static void main(){</ br>}</code></pre>",
-        "<pre><code class=\"language-java\">public static void main(){</ br>}</code></pre>",
-        "<img src=\"games/java/appstoreFinal.png\" />",
-        "<img src=\"games/java/appstoreFinal.png\" />"
+        "The process of instructing the computer to solve a problem.",
+        "The company that Java is currently owned by.",
 
       ]
     },
     {
-      "name": "Methods",
+      "name": "!Java",
       "questions": [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E"
+        "using System<br />using System.Linq",
+        "<img src='games/java/ook.png' />",
+        "<img src='games/java/clojure.png'/>",
+        "<img src='games/java/prolog.png'/>"
 
       ]
     }

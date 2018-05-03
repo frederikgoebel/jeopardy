@@ -203,4 +203,15 @@ button:focus {
 
 .question{
   font-size: 3em;
+  max-width: 100%;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.question img {
+  max-width: 90%;
 }

@@ -9,7 +9,7 @@ const Card = ({id, wasAnswered, value, onClick}) => {
     )
   } else {
     return (
-      <button onClick={(e) => onClick(id)} className={"card " + "v-" + value}>
+      <button onClick={(e) => onClick(id)} className={"card v-" + value}>
       <h3>{value}</h3>
     </button>
     )

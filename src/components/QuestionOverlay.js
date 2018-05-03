@@ -3,17 +3,36 @@ import { connect } from "react-redux";
 import Overlay from './Overlay'
 import { switchGameState, GAME_STATE_QUESTION, GAME_STATE_ASSIGN_POINTS } from '../actions/gameState'
 
-const QuestionOverlay = ({content, onClick}) => {
-  return (
-    <Overlay className="flex flex-center flex-column">
-      <div class="question" onClick={onClick} dangerouslySetInnerHTML = {
-    {
-      __html: content
-    }
-    }>
+class QuestionOverlay extends React.Component {
+  constructor(props) {
+    super(props);
+    this.audio = new Audio('music.mp3');
+    this.audio.loop = true;
+    console.log("hey")
+
+  }
+  render() {
+    const {content, onClick} = this.props
+    return (
+      <Overlay className="flex flex-center flex-column">
+      <div className="question" onClick={onClick} dangerouslySetInnerHTML = {
+      {
+        __html: content
+      }
+      }>
       </div>
     </Overlay>
-  )
+    )
+  }
+
+  componentDidMount() {
+    this.audio.play();
+  }
+
+  componentWillUnmount() {
+    this.audio.pause();
+    this.audio.currentTime = 0;
+  }
 }
 
 const mapStateToProps = state => {

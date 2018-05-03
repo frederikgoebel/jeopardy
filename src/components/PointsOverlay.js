@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addScore, cardSolved } from "../actions";
-import { switchGameState, GAME_STATE_ASSIGN_POINTS, GAME_STATE_BOARD } from '../actions/gameState'
+import { switchGameState, GAME_STATE_BOARD } from '../actions/gameState'
 import Overlay from './Overlay'
 
 

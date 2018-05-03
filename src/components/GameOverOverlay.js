@@ -26,7 +26,7 @@ const GameOverOverlay = ({isGameOver, winner, onClick}) => {
 }
 
 const mapStateToProps = state => {
-  const {players, questions} = state
+  const {players} = state
 
   var winner = []
   players.allIds.forEach((id) => {

@@ -16,7 +16,7 @@ class PlayerSelection extends React.Component {
     const {players, removePlayer, start} = this.props;
     const playerList = players.allIds.map((id) => {
       return (
-      [<button key={id} button onClick={(e) => removePlayer(id)} type="button">{players.byId[id].name}</button>, <span className="highlight">/</span>]
+      [<button key={id} onClick={(e) => removePlayer(id)} type="button">{players.byId[id].name}</button>, <span key={id + "span"}className="highlight">/</span>]
       )
     })
 
@@ -29,7 +29,7 @@ class PlayerSelection extends React.Component {
         <h2>PLAYERS<span className="highlight">*</span></h2>
         <hr />
       </div>
-<form onSubmit={(e) => this.onSubmit(e)} id="nameInput">
+      <form onSubmit={(e) => this.onSubmit(e)} id="nameInput">
         <div id="playerList">
         {playerList}
         </div>

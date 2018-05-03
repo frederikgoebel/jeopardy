@@ -4,7 +4,7 @@ import PlayerScore from './PlayerScore'
 import { toggleFullscreen } from '../helper'
 
 const GameInfo = ({players}) => {
-  const playerScores = players.allIds.map((id) => <PlayerScore key={players.byId[id].name} playerName={players.byId[id].name} score={players.byId[id].score} />)
+  const playerScores = players.allIds.map((id) => <PlayerScore key={id} playerName={players.byId[id].name} score={players.byId[id].score} />)
   return (
     <div id="gameInfo">
     {playerScores}

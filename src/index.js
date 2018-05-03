@@ -56,8 +56,17 @@ const initstate = {
     allIds: ["catergory1", "catergory2"]
   },
   players: {
-    byId: {},
-    allIds: []
+    byId: {
+      "player1": {
+        name: "Fred",
+        score: 200,
+      },
+      "player2": {
+        name: "Erik",
+        score: 200,
+      }
+    },
+    allIds: ["player1", "player2"]
   }
 }
 

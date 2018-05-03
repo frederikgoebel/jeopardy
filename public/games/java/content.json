@@ -12,17 +12,19 @@
     {
       "name": "OOP",
       "questions": [
-        "<pre><code class=\"language-java\">int getWidth();</code></pre>",
-        "<pre><code class=\"language-java\">void setWidth(int value);</code></pre>",
-        "<pre><code class=\"language-java\">void MyClass(int height, string name);</code></pre>",
+        "<pre><code class=\"language-java\">void MyClass(int height, string name){<br />    this.height = height;<br />    this.name=name;<br />}</code></pre>",
+        "<pre><code class=\"language-java\">int getWidth(){<br />    return width;<br />}</code></pre>",
+        "<pre><code class=\"language-java\">void setWidth(int width){<br />    this.width = width;<br />}</code></pre>",
         "<pre><code class=\"language-java\">MyClass myClass = new MyClass(100, \"Hans\");</code></pre>"
       ]
     },
     {
-      "name": "ArrayList",
+      "name": "Good to know",
       "questions": [
         "<pre><code class=\"language-java\">myList.add(\"a\");</code></pre>",
-        "<pre><code class=\"language-java\">myList.get(0);</code></pre>"
+        "<pre><code class=\"language-java\">myList.get(0);</code></pre>",
+        "<pre><code class=\"language-java\">\"hello\".toUpperCase();</code></pre>",
+        "<pre><code class=\"language-java\">!false</code></pre>"
       ]
     },
     {
@@ -31,7 +33,7 @@
         "<pre><code class=\"language-java\">public static void main(){</ br>}</code></pre>",
           "<pre><code class=\"language-java\">if(x == 10){}</code></pre>",
           "<pre><code class=\"language-java\">for(){}<br/>while(){}</code></pre>",
-          "<pre><code class=\"language-java\">if(x == 10){}</code></pre>"
+          "<pre><code class=\"language-java\">(x > 10 && x < 100)</code></pre>"
       ]
     },
     {
@@ -39,6 +41,8 @@
       "questions": [
         "The process of instructing the computer to solve a problem.",
         "The company that Java is currently owned by.",
+        "<img src='games/java/logo.png'/>",
+        "The inventor of Java."
 
       ]
     },

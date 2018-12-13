@@ -57,16 +57,8 @@ const initstate = {
   },
   players: {
     byId: {
-      "player1": {
-        name: "Fred",
-        score: 200,
-      },
-      "player2": {
-        name: "Erik",
-        score: 200,
-      }
     },
-    allIds: ["player1", "player2"]
+    allIds: []
   }
 }
 

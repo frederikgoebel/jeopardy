@@ -12,7 +12,7 @@
     {
       "name": "OOP",
       "questions": [
-        "<pre><code class=\"language-java\">void MyClass(int height, string name){<br />    this.height = height;<br />    this.name=name;<br />}</code></pre>",
+        "<pre><code class=\"language-java\">public MyClass(int height, string name){<br />    this.height = height;<br />    this.name=name;<br />}</code></pre>",
         "<pre><code class=\"language-java\">int getWidth(){<br />    return width;<br />}</code></pre>",
         "<pre><code class=\"language-java\">void setWidth(int width){<br />    this.width = width;<br />}</code></pre>",
         "<pre><code class=\"language-java\">MyClass myClass = new MyClass(100, \"Hans\");</code></pre>"
